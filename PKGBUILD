@@ -10,6 +10,8 @@ conflicts=('la-capitaine-icon-theme-git')
 source=("git+https://github.com/koompi/la-capitaine-icon-theme.git")
 md5sums=('SKIP')
 package() {
+    cd "${srcdir}/la-capitaine-icon-theme"
+    git checkout koompi
     install -dm 755 "${pkgdir}"/usr/share/icons
     cp -dr --no-preserve='ownership' "${srcdir}/la-capitaine-icon-theme" "${pkgdir}"/usr/share/icons/la-capitaine
 
